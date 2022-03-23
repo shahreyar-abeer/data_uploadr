@@ -5,10 +5,15 @@ Authors@R: person('Zauad SHahreer', 'Abeer', email = 'shahreyar.abeer@gmail.com'
 Description: Upload data to mongodb to be used by the original app.
 License: MIT + file LICENSE
 Imports: 
+    bs4Dash,
     config (>= 0.3.1),
+    data.table,
     golem (>= 0.3.1),
     magrittr,
-    shiny (>= 1.6.0)
+    reactable,
+    shiny (>= 1.6.0),
+    vroom,
+    waiter
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.1.1
