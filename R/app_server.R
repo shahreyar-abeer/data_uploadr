@@ -49,7 +49,14 @@ app_server <- function( input, output, session ) {
     req(data_airbnb$data(), data_rightmove$data(), input$d)
     
     print("here")
-    r$merged_data = merge_rightmove_airbnb(data_rightmove$data()[c(1,4),], data_airbnb$data()[1:1000], input$d)
+    
+    if (isTRUE(input$small_sample)) {
+      r$merged_data = merge_rightmove_airbnb(data_rightmove$data()[c(1,4),], data_airbnb$data()[1:1000], input$d)
+      
+    } else {
+      r$merged_data = merge_rightmove_airbnb(data_rightmove$data(), data_airbnb$data(), input$d)
+    }
+    
     r$merged_data %>% 
       reactable::reactable(
         defaultPageSize = 5,

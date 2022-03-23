@@ -70,7 +70,10 @@ app_ui <- function(request) {
               )
             ),
             sliderInput("d", "distance", 1, 5000, 500, 10, width = "100%", ticks = FALSE),
-            downloadButton("downloadData", "Download merged data", class = "btn-danger")
+            br(),
+            downloadButton("downloadData", "Download merged data", class = "btn-danger"),
+            br(),
+            checkboxInput("small_sample", "Show example with a small sample")
           ),
           
           column(
